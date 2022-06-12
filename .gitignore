@@ -1,0 +1,6 @@
+.vscode
+data/*
+input/*
+queries/*
+venv
+scripts/__pycache__
