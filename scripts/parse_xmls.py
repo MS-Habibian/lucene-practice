@@ -12,7 +12,7 @@ input_files = list(Path('./input/').rglob('*.xml'))
 # print(len(input_files)) # >> 462
 
 
-solr = pysolr.Solr('http://127.0.0.1:8983/solr/IR_core/', always_commit=False)
+solr = pysolr.Solr('http://127.0.0.1:8983/solr/IR_core/', timeout = 300, always_commit=False)
 
 
 global_start_time = time.time()
