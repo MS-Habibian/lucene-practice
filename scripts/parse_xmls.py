@@ -47,17 +47,22 @@ for index, file in enumerate(input_files):
     solr.add(file_docs)
     # solr.delete(q='*')
     print('time to convert docs to json and add to solr: ', time.time() - start_parsing_time)
-    start_commit_time = time.time()
-    solr.commit()
-    print('commit time for this file: ', time.time() - start_commit_time)
-    print(f'total time for parsing and indexing file {index} : ', time.time() - start_reading_time)
+
+    # start_commit_time = time.time()
+    # solr.commit()
+    # print('commit time for this file: ', time.time() - start_commit_time)
+    # print(f'total time for parsing and indexing file {index} : ', time.time() - start_reading_time)
+
+
     # print('checked docs: ', len(seen_docs))
     # print('number of repeated docs: ', repeated_docs_count)
     # exec_time  = time.time() - start_time
     # print('exec time: ', exec_time)
     # if index == 20:
     #     break
-
+start_commit_time = time.time()
+solr.commit()
+print('commit time: ', time.time() - start_commit_time)
 
 print('################# parsing finished....\n')
 print('number of repeated docs: ', repeated_docs_count)
